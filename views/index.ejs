@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-5">
+            <div class="container">
+                <h1 style="text-align: center;">Url shortner</h1>
+            <form action="/shorturls" class="mt-5" method="post">
+              <div class="form-group">
+                 <label for="fullurl" class="sr-only col">url</label>
+                 <input type="text" placeholder="URl" class="form-control col mr-2" id="fullurl" name="fullUrl" required>
+                 <button class="btn btn-danger btn-lg btn-block mt-3 ">submit</button>
+              </div>
+            </form>
+            </div>
+        </div>
+        <table class="table table-dark">
+          <thead>
+              <tr>
+                  <th scope="col">FULLURL</th>
+                  <th scope="col">SHORTURL</th>
+                  <th scope="col">CLICKS</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% shorturls.forEach((SHORTURL) =>{ %>
+                    <tr>
+                        <td><a href="<%=SHORTURL.full %>" target="_blank"><%= SHORTURL.full %></a></td>
+                       <td><a href="<%=SHORTURL.short %>"><%=SHORTURL.short %></a></td>
+                       <td><%=SHORTURL.clicks %></td>
+                   </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
