@@ -8,7 +8,7 @@ dotenv.config()
 //configure ejs setup
 app.set('view engine','ejs')
 //mongoose setup
-mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/urlshotner',{useNewUrlParser:true,useUnifiedTopology:true})
 app.use(express.urlencoded({extended:false}))
 
 app.get('/',async(req,res) =>{
