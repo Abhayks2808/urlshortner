@@ -4,4 +4,4 @@ After clone follow these steps:
 step1:npm init
 step2:npm install
 step3:change my datbase to your localhost database
-step4 :npm run dev
+step4:npm run dev
